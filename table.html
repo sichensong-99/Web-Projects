@@ -1,0 +1,86 @@
+
+{% extends "layout.html" %}
+{% block scripts %} 
+<div class="container1">
+    <div class="card">       
+      
+        <div class="card-body">
+               <table id="mytable" class="table table-hover" style="font-size:smaller">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Hotel</th>
+                            <th>Lead Time</th>
+                            <th>Date</th>
+                            <th>Nights in Weekend</th>
+                            <th>Nights in Week</th>
+                            <th>Meal</th>
+                            <th>Country</th>
+                            <th>Market Segment</th>
+                            <th>Room Type</th>
+                            <th>Changes</th>
+                            <th>Customer Type</th>
+                            <th>Status</th>
+                
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for htl in my_data%}
+                            <tr>
+                                <td>{{ htl.id }}</td>
+                                <td>{{ htl.hotel }}</td>
+                                <td>{{ htl.lead_time }}</td>
+                                <td>{{ htl.arrival_date }}</td>
+                                <td>{{ htl.stays_in_weekend_nights }}</td>
+                                <td>{{ htl.stays_in_week_nights }}</td>
+                                <td>{{ htl.meal }}</td>
+                                <td>{{ htl.country }}</td>
+                                <td>{{ htl.market_segment }}</td>
+                                <td>{{ htl.reserved_room_type }}</td>
+                                <td>{{ htl.booking_changes }}</td>
+                                <td>{{ htl.customer_type }}</td>
+                                <td>{{ htl.reservation_status }}</td>
+                                
+                            </tr>
+                        {% endfor %}
+
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Hotel</th>
+                            <th>Lead Time</th>
+                            <th>Date</th>
+                            <th>Nights in Weekend</th>
+                            <th>Nights in Week</th>
+                            <th>Meal</th>
+                            <th>Country</th>
+                            <th>Market Segment</th>
+                            <th>Room Type</th>
+                            <th>Changes</th>
+                            <th>Customer Type</th>
+                            <th>Status</th>
+                            
+                        </tr>
+                    </tfoot>
+               </table>
+
+
+
+         
+            
+        </div>
+    <div>    
+</div>  
+
+<script>
+    $(document).ready(function() {
+        $('#mytable').DataTable();
+    } );
+    
+    
+ 
+</script>   
+      {% endblock scripts %}

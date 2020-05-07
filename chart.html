@@ -1,0 +1,190 @@
+{% extends "layout.html" %}
+{% block content %}
+{% endblock content %}
+
+
+{% block scripts %}
+<style>
+    h2{
+        font-size: large;
+        text-align: center;
+        margin: 20px;
+    }
+	.center {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+}
+</style>
+<div class="container1">
+    <div class="card">       
+          
+    
+    <!--pie chart-->
+                    <div  >
+                        <h2>Numbers of Customers with 3 Types of Revervation Status</h2>
+                        <div style="width:50%" class="center">
+                            <canvas id="chart-area"></canvas>
+                        </div>
+					</div>
+					<br ><br >
+	<!--bar chart-->
+
+
+					<div>
+						<h2>Cancellation made by different Market Segments</h2>
+						<div style="width: 50%;"class="center">	
+							<canvas id="canvas"></canvas>
+						</div>
+					</div>
+					<br ><br >
+	<!--Scatter chart-->
+					<div>
+						<h2>The Trend Analysis of Length of Stay</h2>
+	                	<div style="width: 50%;"class="center">
+		                 	<canvas id="canvas2"></canvas>
+	                	</div>
+	                </div>  
+	</div>
+</div>
+<script>
+
+        
+        var pie_data = {{pie_data|safe}}
+		var bar_data = {{bar_data|safe}}
+
+		var config1= {
+            type: 'pie',
+            data: {
+                datasets: [{
+                    data: pie_data,
+
+                    backgroundColor: [
+                        window.chartColors.orange,  
+                        window.chartColors.green,
+                        window.chartColors.red,
+                    ],
+                    label: ''
+                }],
+                labels: [
+                    'Canceled',
+                    'Check-out',
+                    'No Show'
+                ]
+            },
+            options: {
+                responsive: true
+            }
+        };
+
+
+	
+		var color = Chart.helpers.color;
+
+		var barChartData = {
+			labels: ['Complementary', 'Aviation', 'Corporate', 'Direct', 'Groups', 'Offline TA/TO', 'Online TA'],
+			datasets: [{
+				label: 'reservation_status',
+				backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+				borderColor: window.chartColors.red,
+				borderWidth: 1,
+				data:bar_data
+			}]
+
+		};
+		var chart_data = {{ chart_data|safe }} 
+        var chart_data2 = {{ chart_data2|safe }}
+        var color = Chart.helpers.color;
+	    var scatterChartData = {
+		    datasets: [{
+			label: 'week days',
+			xAxisID: 'x-axis-1',
+			yAxisID: 'y-axis-1',
+			borderColor: window.chartColors.red,
+			backgroundColor: color(window.chartColors.red).alpha(0.2).rgbString(),
+			data: chart_data,
+		}, {
+			label: 'Weekends',
+			xAxisID: 'x-axis-1',
+			yAxisID: 'y-axis-2',
+			borderColor: window.chartColors.blue,
+			backgroundColor: color(window.chartColors.blue).alpha(0.2).rgbString(),
+			data: chart_data2,
+		}]
+	};
+
+
+		window.onload = function() {
+			var ctx = document.getElementById('chart-area').getContext('2d');
+		window.myPie = new Chart(ctx, config1);
+
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myBar = new Chart(ctx, {
+				type: 'bar',
+				data: barChartData,
+				options: {
+					responsive: true,
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'Who cancelled the most'
+					}
+				}
+			})
+
+		var ctx = document.getElementById('canvas2').getContext('2d');
+		window.myScatter = Chart.Scatter(ctx,{
+			data: scatterChartData,
+			options: {
+				responsive: true,
+				hoverMode: 'nearest',
+				intersect: true,
+				title: {
+					display: true,
+					text: 'The trend analysis of length of stay'
+				},
+				scales: {
+					xAxes: [{
+						position: 'bottom',
+						gridLines: {
+							zeroLineColor: 'rgba(0,0,0,1)'
+						}
+					}],
+					yAxes: [{
+						type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+						display: true,
+						position: 'left',
+						id: 'y-axis-1',
+					}, {
+						type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+						display: true,
+						position: 'right',
+						reverse: true,
+						id: 'y-axis-2',
+
+						// grid line settings
+						gridLines: {
+							drawOnChartArea: false, // only want the grid lines for one axis to show up
+						},
+					}],
+				}
+			}
+		});
+	};
+
+
+
+
+
+        
+    
+
+        
+</script> 
+
+
+
+{% endblock scripts %}
