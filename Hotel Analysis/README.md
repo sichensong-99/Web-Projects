@@ -36,38 +36,59 @@ def employee():
  
     df = pd.read_csv(file_full_path) #read the file through pd(pandas)
     
+ 
+<div class="row">
     
-#### (Please check more detailed in the file <upload.html>)
+               <div class="col-sm-12">
+               
+                   <div class="form-group">
+                   
+                       <label for="exampleInputFile">CSV File</label>
+                       
+                       <div class="input-group">
+                       
+                           <div class="custom-file">
+                           
+                               <input type="file" class="custom-file-input" name="file_csv"  wtx-context="A8F69635-7B4C-4206-9EF2-B47AC8BE1122">
+                               
+                               <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                               
+                           </div></div></div></div></div>
     
-Step 2: Creating form.py to define the form.
+#### (Please check more detailed codes in the file <upload.html>)
+    
+## Step3: Build data table
+
+#### Creating form.py to define the form.
 
 class EmployeeForm(FlaskForm):
+
     file_csv = FileField()
     
-Step 3: Creating model.py to define the table.
+#### Creating model.py to define the table.
 
 class Employee (db.Model):
     __tablename__ = 'employee'
+    
     employee_id = db.Column(db.Integer, primary_key=True)
+    
     first_name = db.Column(db.String(100))
+    
     last_name = db.Column(db.String(100))
+    
     ...
     
 @classmethod
+
     def from_dict(cls, in_dict):#in_dict refers to the data passing in
+    
         cls = Employee() 
-        cls.employee_id = in_dict['EMPLOYEE_ID']#cls refers to class Employee
-        cls.first_name = in_dict['FIRST_NAME']
-        cls.last_name = in_dict['LAST_NAME']
-        ...
         
-Step 4: Create the web page that users could upload the CSV data file.
-<div class="row">
-               <div class="col-sm-12">
-                   <div class="form-group">
-                       <label for="exampleInputFile">CSV File</label>
-                       <div class="input-group">
-                           <div class="custom-file">
-                               <input type="file" class="custom-file-input" name="file_csv"  wtx-context="A8F69635-7B4C-4206-9EF2-B47AC8BE1122">
-                               <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                           </div></div></div></div></div>
+        cls.employee_id = in_dict['EMPLOYEE_ID']#cls refers to class Employee
+        
+        cls.first_name = in_dict['FIRST_NAME']
+        
+        cls.last_name = in_dict['LAST_NAME']
+        
+        ...
+
