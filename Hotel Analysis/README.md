@@ -104,3 +104,11 @@ class Employee (db.Model):
 ![showingdata](https://github.com/sichensong-99/Web-Application-Projects/blob/master/pics/SHOWING%20DATA.png)
 
 You could select the the number of data in one page.
+
+## Step4: Analyze Users Data
+
+For example, we build a chart to figure out users who cancelled service most.
+
+![chart](https://github.com/sichensong-99/Web-Application-Projects/blob/master/pics/chart.png)
+
+#### (Please check more analysis codes in the file<chart.html>)
