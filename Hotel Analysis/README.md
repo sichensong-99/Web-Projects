@@ -10,6 +10,7 @@ Please check the file <home.html> to see the code.
 
 ![upload](https://github.com/sichensong-99/Web-Application-Projects/blob/master/pics/upload_page.png)
 
+
 In this case, we upload the hotel data file, which is CSV file, at first.
 
 @app.route("/employee", methods=["Get", "Post"])
