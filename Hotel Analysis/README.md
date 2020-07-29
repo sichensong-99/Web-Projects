@@ -1,4 +1,4 @@
-# Consumers-analysis-for-Hotel
+# Build A Hotel Website and Analyze Users
 
 ## Step1: Create Home Page
 
