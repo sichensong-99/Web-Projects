@@ -1,4 +1,11 @@
 # Consumers-analysis-for-Hotel
+
+## Step1: Create Home Page
+
+![group_project](https://github.com/sichensong-99/Web-Application-Projects/blob/master/pics/group_project.png)
+
+Please check the file <home.html> to see the code.
+
 Step 1: In this case, we upload the hotel data file, which is CSV file, at first.
 
 @app.route("/employee", methods=["Get", "Post"])
