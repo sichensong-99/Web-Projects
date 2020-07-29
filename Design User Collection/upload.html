@@ -1,0 +1,294 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+
+  <form method="post" autocomplete="off">
+    {{ form.hidden_tag() }}
+   <div class="card">
+      <div class="card-header border-0 bg-primary">
+         <div class="d-flex justify-content-between">
+            <h3 class="card-title">My Form</h3>
+         </div>
+      </div>
+      <div class="card-body">
+      <div class="row">
+
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="firstname">First Name</label>
+              <input type="text" name="first_name" value="{{ my_form.first_name }}" class="form-control {{'is-invalid' if form.first_name.errors }}" id="firstname" placeholder="First Name" wtx-context="41A23699-088A-4048-9E03-1BCCE7BA1CEC">
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="lastname">Last Name</label>
+               <input type="text" name="last_name" value="{{ my_form.last_name }}" class="form-control" id="lastname" placeholder="Last Name" wtx-context="B6C69BAB-D060-41DB-8753-E90E44FC20A1">
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="is-valid" for="exampleInputEmail1">Email address</label>
+              <input type="email" name="email" value="{{ my_form.email }}" class="form-control" id="exampleInputEmail1" placeholder="Email" autocomplete="nope" wtx-context="41A23699-088A-4048-9E03-1BCCE7BA1CEC">
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+               <input type="password" name="password" value="{{ my_form.password }}" class="form-control" id="exampleInputPassword1" placeholder="Password" autocomplete="new-password" wtx-context="B6C69BAB-D060-41DB-8753-E90E44FC20A1">
+            </div>
+          </div>
+        </div>
+
+ 
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+                <label for="exampleInputFile">Image File</label>
+                <div class="input-group">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="exampleInputFile" wtx-context="A8F69635-7B4C-4206-9EF2-B47AC8BE1122">
+                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+           <div class="col-sm-4">
+            <div class="form-group">
+                <label for="exampleInputFile2">File (Excel/pdf link )</label>
+                <div class="input-group">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="exampleInputFile2" wtx-context="A8F69635-7B4C-4206-9EF2-B47AC8BE1122">
+                    <label class="custom-file-label" for="exampleInputFile2">Choose file</label>
+                  </div>
+                </div>
+            </div>
+          </div>
+          
+          <div class="col-sm-4">
+              <div class="form-group">
+                <label for="exampleInputFile3">Data File (read/load)</label>
+                <div class="input-group">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="exampleInputFile3" wtx-context="A8F69635-7B4C-4206-9EF2-B47AC8BE1122">
+                    <label class="custom-file-label" for="exampleInputFile3">Choose file</label>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+         <div class="row">
+            <div class="col-sm-6">
+               <div class="form-group">
+                  <label>Check boxes</label>
+                  <div class="form-check">
+                     <input class="form-check-input" type="checkbox" name="check_list" value="Check 1" {{ 'checked' if my_form.check_list and 'Check 1' in my_form.check_list }} wtx-context="9C4FCC6E-9836-44F2-87E3-5DE6664D2F65">
+                     <label class="form-check-label">Checkbox 1</label>
+                  </div>
+                  <div class="form-check">
+                     <input class="form-check-input" type="checkbox" name="check_list" value="Check 2" {{ 'checked' if my_form.check_list and 'Check 2' in my_form.check_list }}  wtx-context="74D2A4B5-ADF7-4B03-8F4F-192E2FFF6DCB">
+                     <label class="form-check-label">Checkbox 2</label>
+                  </div>
+                  <div class="form-check">
+                     <input class="form-check-input" type="checkbox" name="check_list" value="Check 3" {{ 'checked' if my_form.check_list and 'Check 3' in my_form.check_list }} wtx-context="88B90ABC-9771-42B6-A5B7-D60BFCC88E3E">
+                     <label class="form-check-label">Checkbox 3</label>
+                  </div>
+               </div>
+              </div>
+               <div class="col-sm-6">
+                    <label>Radio Buttons</label>
+                      <!-- radio -->
+                      <div class="form-group">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="radio1" value="Radio 1" {{ 'checked' if my_form.radio1 and 'Radio 1' == my_form.radio1 }} wtx-context="623F4CE8-7689-4E83-A571-DC76B96C702C">
+                          <label class="form-check-label">Radio 1</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="radio1" value="Radio 2" {{ 'checked' if my_form.radio1 and 'Radio 2' == my_form.radio1 }} wtx-context="12666A8A-1430-476E-B5B3-39D56FA9D5B5">
+                          <label class="form-check-label">Radio 2</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="radio1" value="Radio 3" {{ 'checked' if my_form.radio1 and 'Radio 3' == my_form.radio1 }}  wtx-context="C2763045-C3BC-487F-8300-F61F1BF33211">
+                          <label class="form-check-label">Radio 3</label>
+                        </div>
+                      </div>
+                </div>
+             </div>
+
+            <div class="row">
+                    <div class="col-sm-6">
+                      <!-- select -->
+                      <div class="form-group">
+                        <label>Select Single</label>
+                        <select name="single_option" class="custom-select" wtx-context="3658215F-3FFB-40D9-806C-DE1BBADD72A0">
+                          <option value="">select option</option>
+                          <option {{ 'selected' if my_form.single_option and 'option 1' == my_form.single_option }}>option 1</option>
+                          <option {{ 'selected' if my_form.single_option and 'option 2' == my_form.single_option }}>option 2</option>
+                          <option {{ 'selected' if my_form.single_option and 'option 3' == my_form.single_option }} >option 3</option>
+                          <option {{ 'selected' if my_form.single_option and 'option 4' == my_form.single_option }}>option 4</option>
+                          <option {{ 'selected' if my_form.single_option and 'option 5' == my_form.single_option }}>option 5</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                          <label>Select Multiple</label>
+                          <select name="multiple_options" multiple="" class="custom-select" wtx-context="1017F9E3-24FA-4559-9BFA-1A56D2597C45">
+                            <option value="">select option</option>
+                            <option {{ 'selected' if my_form.multiple_options and 'option 1' in my_form.multiple_options }}>option 1</option>
+                            <option {{ 'selected' if my_form.multiple_options and 'option 2' in my_form.multiple_options }}>option 2</option>
+                            <option {{ 'selected' if my_form.multiple_options and 'option 3' in my_form.multiple_options }} >option 3</option>
+                            <option {{ 'selected' if my_form.multiple_options and 'option 4' in my_form.multiple_options }}>option 4</option>
+                            <option {{ 'selected' if my_form.multiple_options and 'option 5' in my_form.multiple_options }}>option 5</option>
+                        
+                          </select>
+                        </div>
+                    </div>
+                  </div>
+
+
+              <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                            <div class="custom-control custom-switch">
+                              <input type="checkbox" name="toggle_switch" {{ 'checked' if my_form.toggle_switch and 'on' == my_form.toggle_switch }} class="custom-control-input" id="customSwitch1" wtx-context="3670800B-0F7E-4A01-AE9D-22B8C46BE73F">
+                              <label class="custom-control-label" for="customSwitch1">Toggle this custom switch element</label>
+                            </div>
+                          </div>
+                    </div>
+
+
+
+                     <div class="col-sm-6">
+     
+                     </div>
+              </div>
+
+
+
+<div class="row" data-select2-id="47">
+              <div class="col-md-6" data-select2-id="29">
+                <div class="form-group">
+                  <label>Minimal</label>
+                  <select name="single_state" class="form-control select2bs4 select2-hidden-accessible" style="width: 100%;" data-select2-id="17" tabindex="-1" aria-hidden="true" wtx-context="904EECBA-31C2-4DEA-86E9-BF176B32D6FB">
+                    <option data-select2-id="">Select State</option>
+                    <option  {{ 'selected' if my_form.single_state and 'Alabama' == my_form.single_state }} data-select2-id="19">Alabama</option>
+                    <option {{ 'selected' if my_form.single_state and 'Alaska' == my_form.single_state }} data-select2-id="63">Alaska</option>
+                    <option {{ 'selected' if my_form.single_state and 'California' == my_form.single_state }} data-select2-id="64">California</option>
+                    <option {{ 'selected' if my_form.single_state and 'Delaware' == my_form.single_state }} data-select2-id="65">Delaware</option>
+                    <option {{ 'selected' if my_form.single_state and 'Tennessee' == my_form.single_state }} data-select2-id="66">Tennessee</option>
+                    <option {{ 'selected' if my_form.single_state and 'Texas' == my_form.single_state }} data-select2-id="67">Texas</option>
+                    <option {{ 'selected' if my_form.single_state and 'Washington' == my_form.single_state }} data-select2-id="68">Washington</option>
+                  </select>
+                </div>
+ 
+              </div>
+              <!-- /.col -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Multiple</label>
+                  <select name="multiple_states" class="select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" wtx-context="792479A3-E1F6-4C41-8926-273A9568C932" data-select2-id="7" tabindex="-1" aria-hidden="true">
+                    <option data-select2-id="">Select States</option>
+                    <option {{ 'selected' if 'Alabama' in my_form.multiple_states }}  data-select2-id="38">Alabama</option>
+                    <option {{ 'selected' if 'Alaska' in my_form.multiple_states }} data-select2-id="39">Alaska</option>
+                    <option {{ 'selected' if 'California' in my_form.multiple_states }} data-select2-id="40">California</option>
+                    <option {{ 'selected' if 'Delaware' in my_form.multiple_states }} data-select2-id="41">Delaware</option>
+                    <option {{ 'selected' if 'Tennessee' in my_form.multiple_states }} data-select2-id="42">Tennessee</option>
+                    <option {{ 'selected' if 'Texas' in my_form.multiple_states }} data-select2-id="43">Texas</option>
+                    <option {{ 'selected' if 'Washington' in my_form.multiple_states }} data-select2-id="44">Washington</option>
+                  </select>
+                </div>
+                 
+              </div>
+              <!-- /.col -->
+            </div>
+
+
+ 
+            <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Date:</label>
+                    <div class="input-group">
+                        <input type="text" name="my_date" value="{{ my_form.my_date }}" class="form-control float-right date-picker" id="date-picker" wtx-context="713742E0-FB64-4F83-8C7B-7E43E1DADFF6">
+                    </div>
+                    <!-- /.input group -->
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Date Range:</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                          <i class="far fa-calendar-alt"></i>
+                          </span>
+                        </div>
+                        <input type="text" name="my_date_range" value="{{ my_form.my_date_range }}" class="form-control float-right" id="reservation" wtx-context="713742E0-FB64-4F83-8C7B-7E43E1DADFF6">
+                    </div>
+                    <!-- /.input group -->
+                  </div>
+              </div>
+            </div>
+
+
+
+            <div class="row">
+           
+              <div class="col-md-6">
+               <label>Multi Select</label>
+                <div class="form-group">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-secondary">
+                    <input type="checkbox" name="multiple_button" value="Commercial" {{ 'checked' if 'Commercial' in my_form.multiple_button }} autocomplete="off"> Commercial
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="checkbox" name="multiple_button" value="Medicare" {{ 'checked' if 'Medicare' in my_form.multiple_button }} autocomplete="off"> Medicare
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="checkbox" name="multiple_button" value="Medicaid" {{ 'checked' if 'Medicaid' in my_form.multiple_button }} autocomplete="off"> Medicaid
+                  </label>
+                </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                  <label>Single Select</label>
+                   <div class="form-group">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                              <label class="btn btn-secondary">
+                                <input type="radio" name="single_button" value="Commercial" {{ 'checked' if my_form.single_button and 'Commercial' == my_form.single_button }} autocomplete="off"> Commercial
+                              </label>
+                              <label class="btn btn-secondary">
+                                <input type="radio" name="single_button" value="Medicare" {{ 'checked' if my_form.single_button and 'Medicare' == my_form.single_button }} autocomplete="off"> Medicare
+                              </label>
+                              <label class="btn btn-secondary">
+                                <input type="radio" name="single_button" value="Medicaid" {{ 'checked' if my_form.single_button and 'Medicaid' == my_form.single_button }} autocomplete="off"> Medicaid
+                              </label>
+                            </div>
+                          </div>
+               </div>
+            </div>
+
+                <div class="form-group">
+                  <label>Comments</label>
+                  <textarea name="comments" class="form-control" rows="3" placeholder="Enter ...">{{ my_form.comments }}</textarea>
+                </div>
+         </div>
+         <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+         </div>
+      </div>
+   </div>
+    </form>
+</div>
+{% endblock content %}

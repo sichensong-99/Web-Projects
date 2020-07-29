@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Assignment 7</h1>
+    <hr />
+    <div class="container">
+      <form method='post'>
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+          {{ form.name.label(class="form-control-label") }}
+  
+          {% if form.name.errors %}
+              {{ form.name(class="form-control is-invalid") }}
+              <div class="invalid-feedback">
+                  {% for error in form.name.errors %}
+                      <span>{{ error }}</span>
+                  {% endfor %}
+              </div>
+          {% else %}
+              {{ form.name(class="form-control") }}
+          {% endif %}
+        </div>
+        <div class="form-group">
+          {{ form.email.label(class="form-control-label") }}
+  
+          {% if form.email.errors %}
+              {{ form.email(class="form-control is-invalid") }}
+              <div class="invalid-feedback">
+                  {% for error in form.email.errors %}
+                      <span>{{ error }}</span>
+                  {% endfor %}
+              </div>
+          {% else %}
+              {{ form.email(class="form-control") }}
+          {% endif %}
+        </div>
+        <div class="form-group">
+          {{ form.password.label(class="form-control-label") }}
+  
+          {% if form.password.errors %}
+              {{ form.password(class="form-control is-invalid") }}
+              <div class="invalid-feedback">
+                  {% for error in form.password.errors %}
+                      <span>{{ error }}</span>
+                  {% endfor %}
+              </div>
+          {% else %}
+              {{ form.password(class="form-control") }}
+          {% endif %}
+        </div>
+        <br>
+      <div>
+        {{ form.age.label(class="form-check-label") }}
+        {{ form.age(class="form-check") }}
+      </div>
+      <br>
+      <br>
+      <div>
+        {{ form.gender.label(class="form-check-label") }}
+        {{ form.gender(class="form-control") }}
+      </div>
+      <br>
+      <br>
+      <div>
+        {{ form.feedback.label(class="form-check-label") }}
+        {{ form.feedback(class="form-control") }}
+      </div>
+      <br>
+      <br>
+      {{ form.experience.label(class="form-check-label") }}
+      {{ form.experience(class="form-control") }}
+      <br>
+      <br>
+      <div class="form-check">
+        {{ form.checkbox.label(class="form-check-label") }}
+        {{ form.checkbox(class="form-check-input") }}
+      </div>
+
+
+
+      <br>
+      <br>
+
+      <div class="form-group">
+        {{ form.submit(class="btn btn-primary") }}
+      </div>
+      
+    </form>
+    
+    </div>
+    
+{% endblock content %}
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Display Information</h1>
+    <div >
+        <table align="center" class="table"> 
+          <tr><!--tr就是表格行的意思-->
+            <th>Name</th><!--th就是表头的意思-->
+            <th>Email</th>
+            <th>password</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>feedback</th>
+            <th>experience</th>
+            <th>Checkbox</th></tr>
+          {% for row in rows %}
+           <tr >
+             {% for elem in row %}
+               <td>{{ elem }}</td><br>
+              {% endfor %}
+           </tr>
+          {% endfor %}
+        </table> </div>  
+{% endblock content %}
+
+
+   

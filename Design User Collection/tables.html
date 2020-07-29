@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class="container">
+    <div class="card">       
+        <div class="card-header border-0 bg-primary">
+            <div class="d-flex justify-content-between">
+                <h3 class="card-title">Table Form</h3>
+            </div>
+        </div>
+        <div class="card-body">
+            <form method="post" enctype='multipart/form-data'>
+                {{ my_form.hidden_tag() }} 
+
+                <!-- profile name -->  
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="firstname">First Name</label>
+                            <input type="text" name="first_name" value="{{ my_data.first_name }}" class="form-control" id="firstname" placeholder="First Name" wtx-context="41A23699-088A-4048-9E03-1BCCE7BA1CEC">                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" name="last_name" value="{{ my_data.last_name }}" class="form-control" id="lastname" placeholder="Last Name" wtx-context="B6C69BAB-D060-41DB-8753-E90E44FC20A1">
+                        </div>
+                    </div>
+                </div>
+                <!-- end profile name -->
+
+                <!-- profile image -->
+                <div class="row">
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                          <label for="firstname">Email</label>
+                          <input type="email" name="email" value="{{ my_data.email }}" class="form-control" id="email" placeholder="Email" wtx-context="41A23699-088A-4048-9E03-1BCCE7BA1CEC">                            
+                      </div>
+                  </div>
+                  <!--
+                  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                  
+                  <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+                  <link rel="stylesheet" type="text/css" href="js/bootstrap-datepicker.css">
+                  
+                  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                  
+                  <script type="text/javascript">
+                        $('.date-picker').datepicker({
+                          'autoclose': ture
+                    })
+                </script>
+                -->
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                          <label for="lastname">Date of Birth</label>
+                          <div class="input-group">
+                          <input type="text" name ="dob" value="{{ my_data.dob }}" class="form-control float-right date-picker">   
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+               <div class="col-sm-12">
+                   <div class="form-group">
+                       <label for="exampleInputFile">Image File</label>
+                       <div class="input-group">
+                           <div class="custom-file">
+                               <input type="file" class="custom-file-input" name="file_photo"  wtx-context="A8F69635-7B4C-4206-9EF2-B47AC8BE1122">
+                               <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+                <!-- profile image -->
+                <div class="card-footer">
+                        <button type="submit" name="btnSubmit" value="submit" class="btn btn-primary">Submit</button>                       
+                </div>
+
+            </form>
+        </div>
+    <div>    
+</div>
+{% endblock content %}
+
+
