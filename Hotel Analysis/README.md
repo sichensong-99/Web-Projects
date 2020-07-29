@@ -14,19 +14,28 @@ Please check the file <home.html> to see the code.
 In this case, we upload the hotel data file, which is CSV file, at first.
 
 @app.route("/employee", methods=["Get", "Post"])
+
 def employee():
+
     my_form = EmployeeForm()
+    
     if my_form.validate_on_submit():
+    
        file_csv = request.files.get('file_csv')
+       
        if file_csv:
+       
           file_full_path = (os.path.join(app.config['UPLOAD_FOLDER'], file_csv.filename))
+          
           file_csv.save(file_full_path) #save to the upload folder
+          
     return render_template("Employee.html", my_form=my_form)
 
  We upload the data in the table using pandas.
  
     df = pd.read_csv(file_full_path) #read the file through pd(pandas)
-    '''To check how many columns and rows in the file
+    
+(Please check more detailed in the file <upload.html>)
     
 Step 2: Creating form.py to define the form.
 
