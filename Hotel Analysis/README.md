@@ -4,7 +4,7 @@
 
 ![group_project](https://github.com/sichensong-99/Web-Application-Projects/blob/master/pics/group_project.png)
 
-Please check the file <home.html> to see the code.
+#### Please check the file <home.html> to see the code.
 
 ## Step2: Create Upload Page to collect user feedback
 
@@ -30,12 +30,14 @@ def employee():
           file_csv.save(file_full_path) #save to the upload folder
           
     return render_template("Employee.html", my_form=my_form)
+    
 
  We upload the data in the table using pandas.
  
     df = pd.read_csv(file_full_path) #read the file through pd(pandas)
     
-(Please check more detailed in the file <upload.html>)
+    
+#### (Please check more detailed in the file <upload.html>)
     
 Step 2: Creating form.py to define the form.
 
