@@ -59,11 +59,18 @@ def employee():
     
 ## Step3: Build data table
 
+![dataset](https://github.com/sichensong-99/Web-Application-Projects/blob/master/pics/dataset.png)
+
 #### Creating form.py to define the form.
 
 class EmployeeForm(FlaskForm):
 
     file_csv = FileField()
+
+![search](https://github.com/sichensong-99/Web-Application-Projects/blob/master/pics/SEARCH.png)
+
+You could search for specific data at the top right-hand corner blank
+
     
 #### Creating model.py to define the table.
 
@@ -91,4 +98,7 @@ class Employee (db.Model):
         cls.last_name = in_dict['LAST_NAME']
         
         ...
+        
+![showingdata](https://github.com/sichensong-99/Web-Application-Projects/blob/master/pics/SHOWING%20DATA.png)
 
+You could select the the number of data in one page.
