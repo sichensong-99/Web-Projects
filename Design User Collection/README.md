@@ -2,21 +2,28 @@
 
 ## Step 1: Create a model through 'class' in Python file. 
 
-## Step 2: Create registration web page and import the model that we created in step 1. 
+## Step 2: Create registration web page and import the model 
 
 Meanwhile, at the top of the registration page, we have to import the model named User. So we write down [from model import User]
 
-## Step 3：In register.html, we define the value as user.name/ user.email/user.password. The reason we use 'if... else' is that if users don't imput any value, the imputbox will not show none instead of keeping blank.
+## Step 3：Define the value
+In register.html, we define the value as user.name/ user.email/user.password. The reason we use 'if... else' is that if users don't imput any value, the imputbox will not show none instead of keeping blank.
 
-## Step 4: In order to display the registered information on web page, we create model.py to define the table, which is used to save information.
+## Step 4: Define the table
+In order to display the registered information on web page, we create model.py to define the table, which is used to save information.
 
-## Step 5: Then we create form.py to define data type. 
+## Step 5: Define data type
+Then we create form.py to define data type. 
 
 Importing datatype from wtforms.
 
-## Step 6: Create a db.py to define a database that saving registered information.
+## Step 6: Define a database
 
-## Step 7：Importing model and form that we've already created in previous steps.
+Create a db.py to define a database that saving registered information.
+
+## Step 7：Import model and form
+
+Importing model and form that we've already created in previous steps.
 
 from flask import Flask, render_template, request, redirect, url_for, flash
 
@@ -44,7 +51,8 @@ def register():
             
             form.feedback.data, form.experience.data,form.checkbox.data) 
            
-## Step 8: Connecting the database that we created in previous step.
+## Step 8: Connect the database
+Connecting the database that we created in previous step.
 
  with sqlite3.connect(DATABASE) as con: 
  
