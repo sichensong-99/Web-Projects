@@ -31,11 +31,13 @@ def employee():
           
     return render_template("Employee.html", my_form=my_form)
     
+    
 
  We upload the data in the table using pandas.
  
     df = pd.read_csv(file_full_path) #read the file through pd(pandas)
-    
+
+
  
 <div class="row">
     
