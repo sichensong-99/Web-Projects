@@ -1,4 +1,4 @@
-# Car-Purchase-analysis
+# Car-Purchase-Analysis
 In this file, it shows how to display the data file that users upload and how to show analysis chart through Javascript.
 
 ## Step 1: Creating the display page to show the data file.
