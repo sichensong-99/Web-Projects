@@ -1,0 +1,89 @@
+{% extends "layout.html" %} 
+{% block content %}
+<p1>How JavaScript Became the Dominant Language of the Web?<br >
+      The article introduces the reason why JavaScript could be the dominant language of the web. In the early 90s, HTML was still young and simple enough for non-developers to pick up, so whatever was to be part of the browser needed to be simple, flexible, and accessible to people less specialize. So, the JavaScript was born and could respond to user input.
+
+
+        In 2003, many new features were proposed in JavaScript, which had begun to dwindle and work had stopped on version 4. 
+        
+        
+        In 2011, JavaScript became the most supported version seeing implementation in Firefox 4 and Chrome 16, Internet Explorer 10, Opera 12.10, and Safari 6 in 2012. In 2013, Built with Node.js, Airbnb launched a site becoming the first to utilize isomorphic JavaScript. This approach allows code to be executed on the server-side and rendered in the browser.
+        <br >
+        <a href="https://www.lform.com/blog/post/how-javascript-became-the-dominant-language-of-the-web">Visit the article</a>
+        
+       </p1><br ><br >
+<p2>Python Resources<br >
+    The reduce function is used to apply a particular function passed in its argument to all of the list elements mentioned in the sequence passed along. 
+    <br >For example, <br >
+    from functools import reduce<br >
+>>> reduce(lambda x,y: x*10+y,[1,2,3,4,5])<br >
+The result will be 12345.
+</p2><br ><br >
+<p3>HTML Elements<br >
+    BACK refers to the history attribute, which's to go back to the previous URL in visit history.
+<br >
+    RELOAD refers to reload the document.
+    <br >
+    MUTE refers to turn the sound off.<br >
+    <pre><code>
+    <video controls muted>
+        <source src="movie.mp4" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+    </video>
+    <input type="button" value="Reload Page" onclick="reloadPage()" />
+    <script type="text/javascript">
+    function reloadPage(){
+        window.location.reload()
+    }</script></code></pre>
+    <pre><code>
+    <script type="text/javascript"> 
+    function goBack()
+    {
+        window.history.back()
+    }
+    </script>
+    <input type="button" value="Back" onclick="goBack()" />
+    </code></pre>
+</p3>
+<p4>
+CSS<br >
+CSS ELEMENT1: Transparent background<br >
+When users put the mouse on the image, the image turns into a transparent background.<br >
+CSS STYLE2: TEXT UPON ON IMAGE<br >
+The style represents to put text on the transparent image as background.<br >
+CSS STYLE3: CAPTION-SIDE<br >
+Caption-side presents to put the caption at the top of the table or bottom of the table.<br >
+The caption-side property specifies the position of a table's ( <table> ) caption ( caption ) with respect to the table itself.<br >
+ It specifies which side of the table the caption is to be positioned at.<br >
+ Using caption-side , a table caption can be positioned above or below the table.<br >
+ <pre><code>
+    <style type="text/css">
+        caption
+        {
+        caption-side:top
+        }
+        </style>
+</code></pre>
+</p4><br >
+<p5>
+Python Practice<br >
+<pre><code>
+n=input("Please insert N:")
+sum=0
+for i in range(int(n)):
+    sum+=i+1 
+print("Sum_up:", sum)
+</code></pre>
+</p5>
+<p6>Flask<br >
+    The following example shows that the way of creating a user interaction page through flask. <br >
+    In the specific page, users could input the username and click submit. <br >
+    Meanwhile, the username submitted could be checked through another URL created. <br >
+    <pre><code>
+           <div class="login-buttons">
+            <button type="submit" class="btn btn-success btn-block btn-lg">Login</button>
+           </div>
+        </code></pre>
+        
+</p6>
+{% endblock content %}

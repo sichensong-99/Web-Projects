@@ -1,0 +1,53 @@
+{% extends "layout.html" %} 
+{% block content %}
+<h1>Please insert the numbers you like and click the button.</h1>
+<script>
+    function sortNumber(a,b){
+    return a - b
+    }
+    function aa(){
+    v=document.getElementsByTagName("input");
+    var arr=new Array();
+    for(i=0;i<5;i++){
+    arr[i]=v[i].value;
+    }
+    document.write(arr.sort(sortNumber))
+    }
+    </script>
+    <body><br>
+    List:<input type="text" name="t" id="t1">
+    <input type="text" name="t" id="t2">
+    <input type="text" name="t" id="t3">
+    <input type="text" name="t" id="t4">
+    <input type="text" name="t" id="t5"><BR><BR>
+    <input type="button" id="b1" value="Sort" onclick="aa()"><BR><br ><br >
+    <p1>The Code:</p1><br>
+    <pre>
+    <code>
+        list1=[8,3,2，-3,0,7]
+        list2=[]
+        while list1:
+            min = list1[0]
+            for x in list1:
+                if x < min:
+                   min = x
+            list2.append(min)
+        list1.remove(min)
+        Print (list2)
+
+        Result:
+        [-3, 0, 2, 3, 7, 8]
+    </pre>
+    </code>
+    <style>
+
+        body {
+        
+            background:url("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2247081777,3851148724&fm=26&gp=0.jpg");
+        
+        }
+        
+        </style>
+    </body>
+
+{% endblock content %}

@@ -1,0 +1,101 @@
+{% extends "layout.html" %} 
+{% block content %}
+  <head>
+  </head>
+  <body>
+    <style>
+
+      body {
+     
+          background:url("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2247081777,3851148724&fm=26&gp=0.jpg");
+     
+      }
+     
+     </style>
+    <h1 style="color:black; font-size:40">HTML Elements Introduction</h1>
+
+
+<p>1. Reload<br />
+  The reload() method is used to reload the current document.
+
+The reload() method does the same as the reload button in your browser.
+
+By default, the reload() method reloads the page from the cache, but you can force it to reload the page from the server by setting the forceGet parameter to true: location.reload(true).
+<br >
+2. IMAGE<br />
+It refers to display an image. Images can improve the design and the appearance of a web page.<br >
+<a href="css_style">3.CSS STYLE(Click me)</a><br />
+The style tag is used to define style information for an HTML document. Inside the style element you specify how HTML elements should render in a browser. Each HTML document can contain multiple style tags.
+<br >   
+4.BACK<br />
+The back() method loads the previous URL in the history list. This is the same as clicking the "Back button" in your browser.
+<br >
+Note: This method will not work if the previous page does not exist in the history list.
+<br >
+Tip: To load the next URL in the history list, use the history.forward() method.
+<br >
+Tip: You can also use the history.go() method to load the previous (or next) URL in the history list.<br >
+5.VIDEO<br />
+The video tag specifies video, such as a movie clip or other video streams. Currently, there are 3 supported video formats for the video element: MP4, WebM, and Ogg.
+<br >6.MUTE<br />
+The muted attribute is a boolean attribute. When present, it specifies that the audio output of the video should be muted.
+<br >
+<a href="link">7.LINK(Click me)</a><br />
+HTML links are hyperlinks. You can click on a link and jump to another document. When you move the mouse over a link, the mouse arrow will turn into a little hand.
+<br >8.COLOR<br />
+    HTML colors are specified using predefined color names, or RGB, HEX, HSL, RGBA, HSLA values. 
+    <br />In HTML, a color can be specified by using a color name.<br />
+    9.TABLE<br />
+    An HTML table is defined with the <table> tag. Each table row is defined with the "tr" tag. A table header is defined with the "th" tag. 
+        By default, table headings are bold and centered. A table data/cell is defined with the "td" tag.
+<br />10. LISTS<br />
+An HTML List can be divided into two categories: unordered list and ordered list.<br />
+An unordered list starts with the "ul" tag. Each list item starts with the "li" tag.
+    The list items will be marked with bullets (small black circles) by default.<br />
+    An ordered list starts with the "ol" tag. Each list item starts with the "li"tag.
+
+        The list items will be marked with numbers by default. <br />
+    11.CLASS<br />
+    The class is an attribute which specifies one or more class names for an HTML element. Also, the class name can be used by CSS and JavaScript to perform certain tasks for elements with the specified class name.
+   <br />
+   12.ID<br />
+   The id attribute specifies a unique id for an HTML element. It's used to perform specific id value by CSS.
+
+<br />
+In CSS, to select an element with a specific id, write a hash (#) character, followed by the id of the element.
+ <br />   
+ 13.HEADING<br />
+ Headings are served as title and regarded as the most important tags.
+<br />
+14.PARAGRAPH
+<br />
+An paragraph tag is used in paragraph, which is after the heading tag. It defines the less important content than heading.
+<br />
+15.FORM<br />
+An form tag is designed to input information for users.<br />
+16.WIDTH AND HEIGHT<br />
+Width and height are specified in pixels by default; so width="500" means 500 pixels wide.<br />
+It's only used to adjust size of image.
+<br />
+17.LANG<br />
+It's the language declared with the lang attribute. The language of the document can be declared in the "html"tag.<br />
+
+Declaring a language is important for accessibility applications (screen readers) and search engines.<br />
+18.NAV<br />
+The HTML "NAV"element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. 
+<br />Usually, the navigation sections are menus, tables of contents, and indexes.<br />
+19.INS<br />
+The "INS" tag defines a text that has been inserted into a document.<br />
+20.MAP<br />
+The "MAP"tag is used to define a client-side image-map. An image-map is an image with clickable areas.
+
+<br />The required name attribute of the element is associated with the "MAP" usemap attribute and creates a relationship between the image and the map.
+    
+   
+
+
+
+</p>
+
+    </body>
+    {% endblock content %}
