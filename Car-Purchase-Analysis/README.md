@@ -2,6 +2,9 @@
 In this file, it shows how to display the data file that users upload and how to show analysis chart through Javascript.
 
 ## Step 1: Creating the display page to show the data file.
+Here's the purchase records file:
+
+![dataset](https://github.com/sichensong-99/Web-Application-Projects/blob/master/pics/datatable.png)
 
 ## Step 2: Defining the function 
 
@@ -166,4 +169,7 @@ window.onload = function() {
     window.myLine = new Chart(ctx, config);};
     
 </script>    
+![chart1](https://github.com/sichensong-99/Web-Application-Projects/blob/master/pics/chart1.png)
+
+![chart2](https://github.com/sichensong-99/Web-Application-Projects/blob/master/pics/chart2.png)
 
