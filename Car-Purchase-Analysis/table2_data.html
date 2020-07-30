@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container1">
+    <div class="card">       
+        <div class="card-header border-0 bg-primary">
+            <div class="d-flex justify-content-between">
+                <h3 class="card-title">Sales Record</h3>
+            </div>
+        </div>
+        <div class="card-body">
+               <table id="mytable" class="table table-hover" style="font-size:smaller">
+                    <thead>
+                        <tr>
+                            <th>ORDER_ID</th>
+                            <th>ORDER_DATE</th>
+                            <th>QUANTITY</th>
+                            <th>DISCOUNT</th>
+                            <th>PROFIT</th>
+                            <th>UNIT_PRICE</th>
+                            <th>SHIPPING_COST</th>
+                            <th>CUSTOMER_NAME</th>
+                            <th>SHIP_DATE</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for sal in my_data%}
+                            <tr>
+                                <td>{{ sal.order_id }}</td>
+                                <td>{{ sal.order_date }}</td>
+                                <td>{{ sal.quantity }}</td>
+                                <td>{{ sal.discount }}</td>
+                                <td>{{ sal.profit }}</td>
+                                <td>{{ sal.unit_price }}</td>
+                                <td>{{ sal.shipping_cost }}</td>
+                                <td>{{ sal.customer_name }}</td>
+                                <td>{{ sal.ship_date }}</td>
+                            </tr>
+                        {% endfor %}
+
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <th>ORDER_ID</th>
+                            <th>ORDER_DATE</th>
+                            <th>QUANTITY</th>
+                            <th>DISCOUNT</th>
+                            <th>PROFIT</th>
+                            <th>UNIT_PRICE</th>
+                            <th>SHIPPING_COST</th>
+                            <th>CUSTOMER_NAME</th>
+                            <th>SHIP_DATE</th>
+                        </tr>
+                    </tfoot>
+               </table>
+               <hr />
+            <div style="width:90%;">
+                <canvas id="canvas"></canvas><!--canvas和HTML标签，用来绘制图形的,这里的id会在下面CSS设置中用到-->
+            </div>  
+            </div>
+            <div>    
+        </div>
+{% endblock content %}
+        
+{% block scripts %}    
+<script>
+     $(document).ready(function() {
+        $('#mytable').DataTable();
+        } );
+
+        var chart_data = {{ chart_data|safe }} 
+        var chart_data2 = {{ chart_data2|safe }}
+        var color = Chart.helpers.color;
+	    var scatterChartData = {
+		    datasets: [{
+			label: 'Profit',
+			xAxisID: 'x-axis-1',
+			yAxisID: 'y-axis-1',
+			borderColor: window.chartColors.red,
+			backgroundColor: color(window.chartColors.red).alpha(0.2).rgbString(),
+			data: chart_data,
+		}, {
+			label: 'Price',
+			xAxisID: 'x-axis-1',
+			yAxisID: 'y-axis-2',
+			borderColor: window.chartColors.blue,
+			backgroundColor: color(window.chartColors.blue).alpha(0.2).rgbString(),
+			data: chart_data2,
+		}]
+	};
+
+	window.onload = function() {
+		var ctx = document.getElementById('canvas').getContext('2d');
+		window.myScatter = Chart.Scatter(ctx,{
+			data: scatterChartData,
+			options: {
+				responsive: true,
+				hoverMode: 'nearest',
+				intersect: true,
+				title: {
+					display: true,
+					text: 'Chart.js Scatter Chart - Multi Axis'
+				},
+				scales: {
+					xAxes: [{
+						position: 'bottom',
+						gridLines: {
+							zeroLineColor: 'rgba(0,0,0,1)'
+						}
+					}],
+					yAxes: [{
+						type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+						display: true,
+						position: 'left',
+						id: 'y-axis-1',
+					}, {
+						type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+						display: true,
+						position: 'right',
+						reverse: true,
+						id: 'y-axis-2',
+
+						// grid line settings
+						gridLines: {
+							drawOnChartArea: false, // only want the grid lines for one axis to show up
+						},
+					}],
+				}
+			}
+		});
+	};
+
+</script>    
+{% endblock scripts %}

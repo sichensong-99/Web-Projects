@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="card">       
+        <div class="card-header border-0 bg-primary">
+            <div class="d-flex justify-content-between">
+                <h3 class="card-title">Profile Form</h3></div></div>
+        <div class="card-body">
+<!--下面的效果是有几行数据的表-->        
+<div class = "row">
+    <div class = "col-sm-12">
+        <table>
+        <tr>
+            <td><label>First Name</label></td><!--这是第一行表头-->
+            <td>{{ my_data.first_name }}</td><!--这是第一行里的数据，为提交的数据-->
+        </tr>
+        <tr>
+            <td><label>Last Name</label></td>
+            <td>{{ my_data.last_name }}</td>
+        </tr>
+        <tr>
+            <td><label>Profile Image</label></td><!--第三行表头-->
+            <td>
+                {{ my_data.file_photo_filename }}<!--第三行里显示user上传文件的名-->
+                <img src="{{ url_for('static', filename='/uploads/' + my_data.file_photo_code ) }}">
+                <!--上边这行还是table的第三行，显示出来上传的图片，图片来源于saved profile-->
+            </td>
+        </tr>
+        <tr>
+            <td><label>Download</label></td><!--第四行表头-->
+            <td>
+                <a href="{{ url_for('downloadFile', filename=my_data.file_photo_code ) }}">{{ my_data.file_photo_filename }}</a>
+                <!--上边这边的意思是下载文件的链接，以及后面白色部分是user上传文件时自动生成的文件名，就是说下载文件时,save file用上传时产生的名字-->
+            </td>
+        </tr>
+        </table>
+    </div>
+</div>
+        
+
+    </div><div>
+
+    </div>
+{% endblock content %}

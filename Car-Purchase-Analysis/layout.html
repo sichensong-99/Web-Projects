@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  {% if title %}
+       <title>{{ title }}</title>
+  {% else %}
+       <title>Welcome to my page</title>
+  {% endif %}
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Sichen</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">(current)
+
+      </span></button><div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+
+<!--
+          <li class="nav-item {{ 'active' if title=='assignment7' }}">
+            <a class="nav-link" href="{{ url_for('register')}}">Register</a></li>
+
+            <li class="nav-item {{ 'active' if title=='Display' }}">
+              <a class="nav-link" href="{{ url_for('display')}}">Display</a></li>
+            -->
+          <li class="nav-item {{ 'active' if title=='Profile' }}">
+            <a class="nav-link" href="{{ url_for('profile')}}">Profile</a></li>
+          <li class="nav-item {{ 'active' if title=='Table' }}">
+            <a class="nav-link" href="{{ url_for('tables')}}">Tables</a></li>
+          <li class="nav-item {{ 'active' if title=='Tables2' }}">
+            <a class="nav-link" href="{{ url_for('tables2')}}">Tables2</a></li>
+          <li class="nav-item {{ 'active' if title=='Sales' }}">
+            <a class="nav-link" href="{{ url_for('sales')}}">Sales</a></li>
+          </div></nav>
+          <ol class="breadcrumb float-sm-left">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item">{{ request.endpoint|upper }}</li>
+          </ol>
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+          <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+            <!-- Font Awesome Icons -->
+            <link rel="stylesheet" href="../static/plugins/fontawesome-free/css/all.min.css">
+            <!-- Theme style -->
+            <link rel="stylesheet" href="../static/AdminLTE-3.0.4/css/adminlte.min.css">
+              <link rel="stylesheet" href="../static/plugins/daterangepicker/daterangepicker.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+            <!-- Google Font: Source Sans Pro -->
+            <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+            <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+              <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css" rel="stylesheet">
+                <link href="https://cdn.datatables.net/1.10.20/css/dataTables.material.min.css" rel="stylesheet">
+            
+          
+            
+            <link rel="stylesheet" href="../static/css/styles.css">
+  <style>
+    .my-button-group  {
+       font-weight: 200 !important;
+     }
+ </style><br ><br ><br >
+  {% with messages = get_flashed_messages(with_categories=true) %}
+	  {% if messages %}
+                {% for category, message in messages %}
+                  	<div class="alert alert-{{ category }}">
+                    		{{ message }}
+                  	</div>
+                {% endfor %}
+	{% endif %}
+{% endwith %}
+
+
+
+    {% block content %}
+    {% endblock content %}
+<!--
+     
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+-->
+<!-- jQuery -->
+<script src="../static/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../static/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+<script src="../static/plugins/moment/moment.min.js"></script>
+<script src="../static/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- AdminLTE App -->
+<script src="../static/AdminLTE-3.0.4/js/adminlte.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+
+<!-- DATA TABLES-->
+ 
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/select/1.2.5/js/dataTables.select.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+
+<!-- Charths -->
+<script type="text/javascript" charset="utf8" src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://www.chartjs.org/samples/latest/utils.js"></script>
+
+
+<!-- site -->
+<script src="../static/js/script.js"></script>
+  </body>
+  {% block scripts %}        
+  {% endblock scripts %}
+</html>
