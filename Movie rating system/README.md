@@ -8,7 +8,11 @@ The goal of this project is to develop a web-based application utilizing MongoDB
 The MongoDB database consists of three collections: the "movie_list" collection, storing detailed movie information; the "movies" collection, storing user-posted movie comments; and the "users" collection, storing user information. 
 ## Feature
 ### Sign-in/Sign-up  
-
+- Logged in successfully
+  
+Users will be directed to their dashboard
+- Unsuccessful login
+  
 If users incorrectly enter their password on the sign-in page, they have the option to navigate to another page to reset the password or proceed to the sign-up page to create a new account  
 
 <img width="956" alt="image" src="https://github.com/sichensong-99/Web-Projects/assets/64934563/1bc0e10b-7a3d-476e-a3df-e9909f8d5c45">
