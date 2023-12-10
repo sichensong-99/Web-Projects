@@ -18,7 +18,8 @@ If users incorrectly enter their password on the sign-in page, they have the opt
 Users can only view movie details and will be automatically redirected to the sign-in/sign-up page when they click the "add comments" button.
 - Logged-in State
 
-Users can view movie details and post comments freely
+Users can view movie details and post comments freely  
+
 <img width="948" alt="image" src="https://github.com/sichensong-99/Web-Projects/assets/64934563/34c0aab4-6ec0-45d1-885e-6b64bf154cd6">
 
 ### Movie Comments
