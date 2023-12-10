@@ -8,8 +8,9 @@ If users incorrectly enter their password on the sign-in page, they have the opt
 
 ### Movie Info
 - Logged-out State
+
 Users can only view movie details and will be automatically redirected to the sign-in/sign-up page when they click the "add comments" button.
-**Logged-in State**  
+- Logged-in State
 
 Users can view movie details and post comments freely
 
