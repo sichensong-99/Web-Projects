@@ -16,8 +16,7 @@ Users can only view movie details and will be automatically redirected to the si
 - Logged-in State
 
 Users can view movie details and post comments freely
-<img width="943" alt="image" src="https://github.com/sichensong-99/Web-Projects/assets/64934563/abfa483a-afb3-4ced-af36-a8a3db3e4a9e">
-
+<img width="948" alt="image" src="https://github.com/sichensong-99/Web-Projects/assets/64934563/34c0aab4-6ec0-45d1-885e-6b64bf154cd6">
 
 ### Movie Comments
 - Logged-out State
@@ -28,3 +27,4 @@ Users can search for comments by movie name, user name, post date, or movie rati
 - Logged-in State
   
 Users can search for comments by movie name, user name, post date, or movie rating level. They can also remove or update their comments
+<img width="946" alt="image" src="https://github.com/sichensong-99/Web-Projects/assets/64934563/5345c4a5-2e92-4202-9405-3547a48fd515">
