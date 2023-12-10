@@ -1,7 +1,8 @@
 # Movie Rating System
 <img width="960" alt="image" src="https://github.com/sichensong-99/Web-Projects/assets/64934563/4a79ccd4-e586-4b63-a410-e79ea5fb6f05">
 
-## Project Description
+## Project Description  
+
 The objective of this project is to get hands-on experience in creating a web-based application using a key-value data store as the back-end. The students have to create a lightweight key-value/document database from which the front-end will retrieve the item information. The webpage will provide the GUI to perform CRUD operations on items
 ## Feature
 ### Sign-in/Sign-up  
