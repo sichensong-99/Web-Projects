@@ -1,2 +1,2 @@
-#MOVIE RATING SYSTEM
+<big>Movie Rating System</big>
 
