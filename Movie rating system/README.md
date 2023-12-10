@@ -31,5 +31,6 @@ Users can search for comments by movie name, user name, post date, or movie rati
 
 - Logged-in State
   
-Users can search for comments by movie name, user name, post date, or movie rating level. They can also remove or update their comments
+Users can search for comments by movie name, user name, post date, or movie rating level. They can also remove or update their comments  
+
 <img width="946" alt="image" src="https://github.com/sichensong-99/Web-Projects/assets/64934563/5345c4a5-2e92-4202-9405-3547a48fd515">
