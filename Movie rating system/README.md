@@ -7,8 +7,7 @@
 If users incorrectly enter their password on the sign-in page, they have the option to navigate to another page to reset the password or proceed to the sign-up page to create a new account
 
 ### Movie Info
-**Logged-out State**  
-
+- Logged-out State
 Users can only view movie details and will be automatically redirected to the sign-in/sign-up page when they click the "add comments" button.
 **Logged-in State**  
 
