@@ -3,7 +3,7 @@
 
 ## Feature
 1. Sign-in/Sign-up
-If users incorrectly enter their password on the sign-in page, they have the option to navigate to another page to reset the password or proceed to the sign-up page to create a new account
+- If users incorrectly enter their password on the sign-in page, they have the option to navigate to another page to reset the password or proceed to the sign-up page to create a new account
 
 2. Movie Info
 - Logged-out State
