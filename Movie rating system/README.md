@@ -15,9 +15,9 @@ Users can only view movie details and will be automatically redirected to the si
 Users can view movie details and post comments freely
 
 ### Movie Comments
-**Logged-out State**  
+- Logged-out State 
 
 Users can search for comments by movie name, user name, post date, or movie rating level. Clicking the "modify comments" button will automatically direct them to the sign-in/sign-up page
-**Logged-in State**  
+- Logged-in State
 
 Users can search for comments by movie name, user name, post date, or movie rating level. They can also remove or update their comments
