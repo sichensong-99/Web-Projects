@@ -3,7 +3,9 @@
 
 ## Project Description  
 
-The objective of this project is to get hands-on experience in creating a web-based application using a key-value data store as the back-end. The students have to create a lightweight key-value/document database from which the front-end will retrieve the item information. The webpage will provide the GUI to perform CRUD operations on items
+The goal of this project is to develop a web-based application utilizing MongoDB as the backend. The frontend will retrieve data from the MongoDB database, and the webpage will offer a graphical user interface (GUI) for performing CRUD operations on items.Through the frontend website, users can rate movies and add comments to each movie, with the backend database automatically updating in real-time to reflect the latest ratings and user comments.  
+
+The MongoDB database consists of three collections: the "movie_list" collection, storing detailed movie information; the "movies" collection, storing user-posted movie comments; and the "users" collection, storing user information. 
 ## Feature
 ### Sign-in/Sign-up  
 
